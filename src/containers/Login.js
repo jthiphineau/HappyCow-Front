@@ -11,7 +11,7 @@ const Login = ({ onLogin }) => {
     try {
       e.preventDefault();
       const response = await axios.post(
-        `https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json`,
+        "https://happycow-backend-jt.herokuapp.com/user/log_in",
         {
           email: email,
           password: password

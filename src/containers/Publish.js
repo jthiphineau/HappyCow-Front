@@ -24,7 +24,7 @@ const Publish = () => {
 
     try {
       const response = await axios.post(
-        `https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json`,
+        "https://happycow-backend-jt.herokuapp.com/establishment/publish",
         formData,
         {
           headers: {
@@ -33,7 +33,7 @@ const Publish = () => {
           }
         }
       );
-      history.push("/offer/" + response.data._id);
+      history.push("/establishment/" + response.data._id);
     } catch (e) {
       console.log("error request ", e.message);
     }
