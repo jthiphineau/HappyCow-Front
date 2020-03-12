@@ -31,7 +31,7 @@ const SignUp = ({ onLogin }) => {
         alert("Veuillez accepter les CGV et CGU");
       } else {
         const response = await axios.post(
-          "https://happycow-backend-jt.herokuapp.com/user/sign-up",
+          "https://happycow-backend-jt.herokuapp.com/user/sign_up",
           {
             email: email,
             username: username,
