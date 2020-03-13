@@ -14,6 +14,7 @@ const SignUp = ({ onLogin }) => {
   const history = useHistory();
 
   const handleSignupSubmit = async e => {
+    alert("dans la fonction");
     try {
       e.preventDefault();
       if (!username || !email || !country || !password || !confirmPassword) {
