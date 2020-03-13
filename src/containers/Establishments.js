@@ -73,8 +73,7 @@ const Establishments = () => {
             style={{
               display: "flex",
               overflowX: "scroll",
-              width: "1080px",
-              backgroundColor: "pink"
+              width: "1080px"
             }}
           >
             {data.map((elem, index) => {
@@ -105,8 +104,7 @@ const Establishments = () => {
             style={{
               display: "flex",
               overflowX: "scroll",
-              width: "1080px",
-              backgroundColor: "pink"
+              width: "1080px"
             }}
           >
             {data.map((elem, index) => {
@@ -114,6 +112,36 @@ const Establishments = () => {
                 (elem.category === 1 ||
                   elem.category === 2 ||
                   elem.category === 11) && (
+                  <div className="establishment-list" key={index + "b"}>
+                    <Card key={index} data={elem} />
+                  </div>
+                )
+              );
+            })}
+          </div>
+        ) : (
+          <div>Aucun magasin pour le moment</div>
+        )}
+      </div>
+      <div>
+        <h2>Hotel, Cosmétiques et d'autres à Paris</h2>
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : data.length > 0 ? (
+          <div
+            style={{
+              display: "flex",
+              overflowX: "scroll",
+              width: "1080px"
+            }}
+          >
+            {data.map((elem, index) => {
+              return (
+                (elem.category === 4 ||
+                  elem.category === 5 ||
+                  elem.category === 7 ||
+                  elem.category === 14 ||
+                  elem.category === 99) && (
                   <div className="establishment-list" key={index + "b"}>
                     <Card key={index} data={elem} />
                   </div>

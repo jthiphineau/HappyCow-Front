@@ -11,7 +11,14 @@ const Login = ({ onLogin }) => {
     try {
       e.preventDefault();
       const response = await axios.post(
+        // pour passer en ligne:
+
         "https://happycow-backend-jt.herokuapp.com/user/log_in",
+
+        // pour passer en local:
+
+        // "http://localhost:4000/user/log_in",
+
         {
           email: email,
           password: password
@@ -20,6 +27,8 @@ const Login = ({ onLogin }) => {
       if (response.data.token) {
         onLogin(response.data.token, response.data.account.username);
         history.push("/");
+      } else {
+        alert("Identifiants incorrects");
       }
     } catch (error) {
       console.log(error.message);

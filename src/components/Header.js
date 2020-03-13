@@ -58,8 +58,7 @@ const Header = ({ token, setToken, username }) => {
               className="Link login"
             >
               <div className="user-offer-button">
-                <p>{username}</p>
-                Se déconnecter
+                <div className="logIn-button">Se déconnecter</div>
               </div>
             </div>
           )}

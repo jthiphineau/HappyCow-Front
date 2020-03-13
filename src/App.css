@@ -5,8 +5,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* display: flex;
-  align-items: center; */
+  overflow-x: hidden;
 }
 
 ul {
@@ -57,6 +56,11 @@ h2 {
   font-weight: bold;
 }
 h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #489e58;
+}
+h4 {
   font-size: 12px;
   font-weight: bold;
 }
@@ -186,70 +190,74 @@ h3 {
 .card {
   text-decoration: none;
   color: black;
-  background-color: green;
+  background-color: white;
   cursor: pointer;
   width: 345px;
-  height: auto;
+  height: 330px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
-  overflow: hidden;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 .picture {
   display: flex;
-  background-color: #cad1d9;
+  background-color: white;
   justify-content: center;
   align-items: center;
   height: 228px;
   width: 345px;
-  object-fit: cover;
 }
 
 .picture img {
   display: flex;
-  max-width: 345px;
+  width: 345px;
   height: 228px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .card-infos {
-  padding: 5px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 10px 20px;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
-  background-color: turquoise;
+  background-color: white;
   align-items: center;
 }
 
 /* ETABLISSEMENT ************************** ETABLISSEMENT ******************************/
 
 .title {
-  background-color: turquoise;
-  /* display: grid;
-  grid-template-columns: 7fr 4fr; */
+  width: 100%;
+  background-color: #9069cd;
+  overflow: cover;
+  margin: 10px;
+  padding: 10px;
 }
 
 .map {
-  background-color: lawngreen;
-  width: 300px;
+  /* background-color: lawngreen; */
+  width: 1024px;
   height: 300px;
+  padding-top: 41px;
 }
 
 .leaflet-container {
-  background-color: lawngreen;
-  width: 300px;
+  /* background-color: lawngreen; */
+  width: 1024px;
   height: 300px;
+  border-radius: 5px;
 }
 .establishment-container {
   display: flex;
   flex-direction: column;
+  width: 1024px;
+  margin: auto;
+  align-items: center;
 }
 .popup {
   height: 60px;
@@ -261,10 +269,102 @@ h3 {
   overflow: cover;
   font-size: 13px;
 }
+.img-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 41px;
+}
 .img-gallery img {
   background-color: "blue";
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
   display: flex;
   object-fit: cover;
+}
+/* PUBLISH ************************** PUBLISH ******************************/
+
+.publish-card {
+  width: 30%;
+  margin: 60px auto;
+  padding: 30px 200px;
+  background-color: white;
+}
+
+.publish-card .title {
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #489e58;
+}
+
+.publish-card form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.publish-card input:not([type="file"]) {
+  width: 100%;
+  box-sizing: border-box;
+  height: 45px;
+  border-radius: 25px;
+  outline: none;
+  border: 1px solid #d9e0eb;
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+.publish-card form input[type="submit"] {
+  background-color: #9069cd;
+  color: white;
+  font-weight: 700;
+}
+
+.publish-card form input[type="file"] {
+  margin-bottom: 20px;
+}
+
+.publish-card form input[type="number"] {
+  width: 30%;
+}
+
+.publish-card p {
+  font-weight: 700;
+  font-size: 13px;
+}
+/* SIGNUP ************************** SIGNUP ******************************/
+
+.signup-container {
+  height: 220px;
+  width: 335px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 60px;
+  margin: 40px auto;
+  border: solid;
+  border-color: #9069cd;
+  border-radius: 10px;
+}
+/* LOGIN ************************** LOGIN ******************************/
+
+.login-card {
+  height: 120px;
+  width: 335px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 80px;
+  margin: 40px auto;
+  border: solid;
+  border-color: #9069cd;
+  border-radius: 10px;
 }

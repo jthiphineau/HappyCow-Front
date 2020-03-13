@@ -70,12 +70,6 @@ const Establishment = () => {
             <p>{data.type}</p>
             <p>{data.rating}</p>
           </div>
-          <div>
-            <button>Mise à jour</button>
-            <button>Favoris</button>
-            <button>Voyage</button>
-            <button>Partager</button>
-          </div>
         </div>
       </div>
       <div>
@@ -85,23 +79,8 @@ const Establishment = () => {
         <p>TROUVER</p>
         <p>{data.address}</p>
         <p>{data.description}</p>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            backgroundColor: "red"
-          }}
-        ></div>
-        <div
-          className="img-gallery"
-          // style={{
-          //   backgroundColor: "blue",
-          //   height: "100px",
-          //   width: "100px",
-          //   display: "flex",
-          //   objectFit: "cover"
-          // }}
-        >
+
+        <div className="img-gallery">
           <img src={data.pictures[0]} alt={1}></img>
           <img src={data.pictures[1]} alt={2}></img>
           <img src={data.pictures[2]} alt={3}></img>
@@ -124,7 +103,7 @@ const Establishment = () => {
           />
           <Popup position={[data.location.lat, data.location.lng]}>
             <div className="popup">
-              <h3>{data.name}</h3>
+              <h4>{data.name}</h4>
               {data.type}
             </div>
           </Popup>

@@ -19,12 +19,18 @@ const Publish = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
-    formData.append("price", price);
     formData.append("file", file);
 
     try {
       const response = await axios.post(
+        // pour passer en ligne:
+
         "https://happycow-backend-jt.herokuapp.com/establishment/publish",
+
+        // pour passer en local:
+
+        // "http://localhost:4000/publish",
+
         formData,
         {
           headers: {
@@ -51,8 +57,7 @@ const Publish = () => {
           type="text"
           onChange={e => setDescription(e.target.value)}
         />
-        <p>Prix *</p>
-        <input type="number" onChange={e => setPrice(e.target.value)} />
+
         <p>Photo *</p>
         <input type="file" onChange={e => setFile(e.target.files[0])} />
         <input value="Valider" type="submit" />
