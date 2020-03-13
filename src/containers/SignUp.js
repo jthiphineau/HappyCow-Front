@@ -24,8 +24,8 @@ const SignUp = ({ onLogin }) => {
         alert("Veuillez accepter les CGV et CGU");
       } else {
         const response = await axios.post(
-          // "https://happycow-backend-jt.herokuapp.com/user/sign_up",
-          "http://localhost:4000/user/sign_up",
+          "https://happycow-backend-jt.herokuapp.com/user/sign_up",
+          // "http://localhost:4000/user/sign_up",
           {
             email: email,
             username: username,
@@ -34,8 +34,9 @@ const SignUp = ({ onLogin }) => {
           }
         );
         console.log(response.data);
-
+        alert("axios fait");
         if (response.data.token) {
+          alert("ok");
           onLogin(response.data.token, response.data.account.username);
           history.push("/");
         } else {
