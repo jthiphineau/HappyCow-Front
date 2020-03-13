@@ -16,14 +16,7 @@ const SignUp = ({ onLogin }) => {
   const handleSignupSubmit = async e => {
     try {
       e.preventDefault();
-      if (
-        !username ||
-        !email ||
-        !country ||
-        !password ||
-        !confirmPassword ||
-        !checkbox
-      ) {
+      if (!username || !email || !country || !password || !confirmPassword) {
         alert("Veuillez remplir tous les champs");
       } else if (password !== confirmPassword) {
         alert("Vos mots de passe ne sont pas identiques");
@@ -31,7 +24,8 @@ const SignUp = ({ onLogin }) => {
         alert("Veuillez accepter les CGV et CGU");
       } else {
         const response = await axios.post(
-          "https://happycow-backend-jt.herokuapp.com/user/sign_up",
+          // "https://happycow-backend-jt.herokuapp.com/user/sign_up",
+          "http://localhost:4000/user/sign_up",
           {
             email: email,
             username: username,
@@ -39,11 +33,13 @@ const SignUp = ({ onLogin }) => {
             password: password
           }
         );
-        // console.log(response.data);
+        console.log(response.data);
 
         if (response.data.token) {
           onLogin(response.data.token, response.data.account.username);
           history.push("/");
+        } else {
+          alert("Compte existant");
         }
       }
     } catch (error) {
